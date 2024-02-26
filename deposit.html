@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deposit</title>
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&family=Montserrat:wght@400;700&family=Sawarabi+Mincho&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="block">
+      <header class="header">
+        <div class="container">
+          <div class="id-player">
+            <img src="./assets/images/battleroom-open/player.svg" alt="" />
+            <p class="id-player-desc">
+              Davis <br />
+              <span style="color: #f8d05f; font-size: 16px">#2114968</span>
+            </p>
+          </div>
+
+          <div class="account">
+            <img src="./assets/images/battleroom-open/shield.svg" alt="" />
+            <p class="account-info">
+              <span style="color: #ff3449">Account not verified</span> <br />
+              <a href="#" onclick="showNextPopup('firstPopup')">Verify Now</a>
+            </p>
+          </div>
+          <div id="firstPopup" class="popup prompt-container-verification">
+            <form>
+              <div class="prompt-content">
+                <img
+                  src="./assets/images/battleroom-open/plus.svg"
+                  class="prompt-icon prompt-icon-plus-ver"
+                  alt=""
+                />
+                <img
+                  src="./assets/images/verification/verification.svg"
+                  class="prompt-icon"
+                  alt=""
+                />
+                <p class="prompt-title" style="padding: 0">
+                  Let's get you verified
+                </p>
+                <p class="prompt-desc white">
+                  Before you start, prepare your identity document and make sure
+                  it is valid.
+                </p>
+                <p class="prompt-desc white">
+                  We also require you to agree to the processing of your
+                  personal data:
+                </p>
+                <p
+                  class="prompt-desc white"
+                  style="font-size: 16px; font-weight: 500"
+                >
+                  I'm a resident or live in:
+                </p>
+                <div class="verify-block-checkmark">
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox1" />
+                    <label for="idCardCheckbox1" class="desc white"
+                      >United States Of America
+                    </label>
+                  </div>
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox2" />
+                    <label for="idCardCheckbox2" class="desc white"
+                      >Other</label
+                    >
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="btn-continue"
+                  onclick="hidePopup('firstPopup'); showNextPopup('secondPopup')"
+                >
+                  Continue
+                </button>
+              </div>
+            </form>
+          </div>
+          <div id="secondPopup" class="popup prompt-container-verification">
+            <form>
+              <div class="prompt-content">
+                <img
+                  src="./assets/images/battleroom-open/plus.svg"
+                  class="prompt-icon prompt-icon-plus-ver"
+                  alt=""
+                />
+                <img
+                  src="./assets/images/verification/verification.svg"
+                  class="prompt-icon"
+                  alt=""
+                />
+                <p class="prompt-title" style="padding: 0">
+                  Let's get you verified
+                </p>
+                <p class="desc white" style="padding: 0; text-align: center">
+                  Identity document
+                </p>
+                <img
+                  src="./assets/images/verification/step-1.svg"
+                  class="prompt-icon"
+                  alt=""
+                />
+                <p class="desc white">Select issuing country</p>
+                <div class="dropdown-country">
+                  <button onclick="toggleDropdown()" class="dropbtn">
+                    <img
+                      src="./assets/images/flags/usa.svg"
+                      style="height: 25px"
+                      alt=""
+                    />
+                    United States
+                    <div class="ver-aroow">
+                      <img
+                        src="./assets/images/verification/arrow.svg"
+                        alt=""
+                      />
+                    </div>
+                  </button>
+                </div>
+                <p class="desc white">Choose your document type</p>
+                <div class="verify-block-checkmark">
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox3" />
+                    <label for="idCardCheckbox3" class="desc white"
+                      >ID card
+                    </label>
+                  </div>
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox4" />
+                    <label for="idCardCheckbox4" class="desc white"
+                      >Passport</label
+                    >
+                  </div>
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox5" />
+                    <label for="idCardCheckbox5" class="desc white"
+                      >Residence permit</label
+                    >
+                  </div>
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox6" />
+                    <label for="idCardCheckbox6" class="desc white"
+                      >Driver`slicense</label
+                    >
+                  </div>
+                </div>
+                <p class="desc white">The document should be:</p>
+                <p class="desc white">- bright and clear,</p>
+                <p class="desc white">
+                  - all corners of the document should be visible.
+                </p>
+                <div class="upload">
+                  <input type="file" id="fileInput" name="fileInput" />
+                  <label for="fileInput">
+                    <img
+                      class="upload-img"
+                      src="./assets/images/verification/upload.svg"
+                      alt="Загрузить файл"
+                    />
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  class="btn-continue"
+                  onclick="hidePopup('secondPopup'); showNextPopup('thirdPopup')"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+          <div id="thirdPopup" class="popup prompt-container-verification">
+            <form>
+              <div class="prompt-content">
+                <img
+                  src="./assets/images/battleroom-open/plus.svg"
+                  class="prompt-icon prompt-icon-plus-ver"
+                  alt=""
+                />
+                <img
+                  src="./assets/images/verification/verification.svg"
+                  class="prompt-icon"
+                  alt=""
+                />
+                <p class="prompt-title" style="padding: 0">Step 2</p>
+                <p class="desc white" style="padding: 0; text-align: center">
+                  Email verification
+                </p>
+                <img
+                  src="./assets/images/verification/step-2.svg"
+                  class="prompt-icon"
+                  alt=""
+                />
+                <p class="desc white">Enter your email</p>
+                <input
+                  type="email"
+                  name=""
+                  class="input-email"
+                  placeholder="Email*"
+                  id=""
+                />
+                <div class="verification-code-block">
+                  <input
+                    type="text"
+                    placeholder="_ _ _ _"
+                    class="enter-code"
+                    maxlength="4"
+                    pattern="[0-9]{4}"
+                  />
+                  <button type="submit" class="send-code">Send code</button>
+                </div>
+                <button
+                  type="button"
+                  class="btn-continue"
+                  onclick="hidePopup('thirdPopup'); showNextPopup('fourthPopup')"
+                >
+                  Continue
+                </button>
+              </div>
+            </form>
+          </div>
+          <div id="fourthPopup" class="popup prompt-container-verification">
+            <div class="prompt-content">
+              <div class="confetti">
+                <div class="successfully-verified">
+                  <img
+                    src="./assets/images/verification/verification.svg"
+                    class="prompt-icon"
+                    style="margin: 0 auto"
+                    alt=""
+                  />
+                  <p class="prompt-title" style="padding: 0">
+                    Successfully verified
+                  </p>
+                  <p class="desc white" style="padding: 0; text-align: center">
+                    You are now verified!
+                  </p>
+                  <a
+                    href="./battleroom-live.html"
+                    class="btn-continue"
+                    onclick="hidePopup('fourthPopup')"
+                  >
+                    Ok
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="account-action">
+            <a href="#" class="account-action-btn" style="color: #fff">
+              Main Balance <br />
+              <span style="font-family: Sawarabi Mincho; color: #f7d261">
+                $1,000</span
+              ></a
+            >
+            <a href="./deposit.html" class="account-action-btn"
+              ><img src="./assets/images/icons/deposit.svg" alt="" />Deposit</a
+            >
+            <a href="./withdrawal.html" class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/withdrawal.svg"
+                alt=""
+              />Withdrawal</a
+            >
+            <a href="./transactions.html" class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/transaction.svg"
+                alt=""
+              />Tranactions</a
+            >
+            <a
+              href="./personal-settings-notverified.html"
+              class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/settings.svg"
+                alt=""
+              />Personal Settings</a
+            >
+            <a href="./mybattles.html" class="account-action-btn"
+              ><img src="./assets/images/battleroom-open/battle.svg" alt="" />
+              My Battles</a
+            >
+            <a href="./leaderboard.html" class="account-action-btn"
+              ><img src="./assets/images/battleroom-open/crown.svg" alt="" />
+              Leaderboard</a
+            >
+            <a href="./support.html" class="account-action-btn"
+              ><img src="./assets/images/battleroom-open/support.svg" alt="" />
+              Support</a
+            >
+          </div>
+        </div>
+      </header>
+      <header class="header-adaptive">
+        <div class="container">
+          <div class="header-container">
+            <div class="id-player">
+              <img src="./assets/images/battleroom-open/player.svg" alt="" />
+              <p class="id-player-desc">
+                Davis <br />
+                <span style="color: #f8d05f; font-size: 16px">#2114968</span>
+              </p>
+            </div>
+            <div class="burger-menu">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+
+          <div class="account-action-adaptive">
+            <div class="account">
+              <img src="./assets/images/battleroom-open/shield.svg" alt="" />
+              <p class="account-info">
+                <span style="color: #ff3449">Account not verified</span> <br />
+                <a href="#" onclick="showNextPopup('fifthPopup')">Verify Now</a>
+              </p>
+            </div>
+            <div id="fifthPopup" class="popup prompt-container-verification">
+              <form>
+                <div class="prompt-content">
+                  <img
+                    src="./assets/images/battleroom-open/plus.svg"
+                    class="prompt-icon prompt-icon-plus-ver"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/images/verification/verification.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="prompt-title" style="padding: 0">
+                    Let's get you verified
+                  </p>
+                  <p class="prompt-desc white">
+                    Before you start, prepare your identity document and make
+                    sure it is valid.
+                  </p>
+                  <p class="prompt-desc white">
+                    We also require you to agree to the processing of your
+                    personal data:
+                  </p>
+                  <p
+                    class="prompt-desc white"
+                    style="font-size: 16px; font-weight: 500"
+                  >
+                    I'm a resident or live in:
+                  </p>
+                  <div class="verify-block-checkmark">
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox1" />
+                      <label for="idCardCheckbox1" class="desc white"
+                        >United States Of America
+                      </label>
+                    </div>
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox2" />
+                      <label for="idCardCheckbox2" class="desc white"
+                        >Other</label
+                      >
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-continue"
+                    onclick="hidePopup('fifthPopup'); showNextPopup('sixthPopup')"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div id="sixthPopup" class="popup prompt-container-verification">
+              <form>
+                <div class="prompt-content">
+                  <img
+                    src="./assets/images/battleroom-open/plus.svg"
+                    class="prompt-icon prompt-icon-plus-ver"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/images/verification/verification.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="prompt-title" style="padding: 0">
+                    Let's get you verified
+                  </p>
+                  <p class="desc white" style="padding: 0; text-align: center">
+                    Identity document
+                  </p>
+                  <img
+                    src="./assets/images/verification/step-1.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="desc white">Select issuing country</p>
+                  <!---->
+                  <div class="dropdown-country">
+                    <button onclick="toggleDropdown()" class="dropbtn">
+                      <img
+                        src="./assets/images/flags/usa.svg"
+                        style="height: 25px"
+                        alt=""
+                      />
+                      United States
+                      <div class="ver-aroow">
+                        <img
+                          src="./assets/images/verification/arrow.svg"
+                          alt=""
+                        />
+                      </div>
+                    </button>
+                  </div>
+                  <p class="desc white">Choose your document type</p>
+                  <div class="verify-block-checkmark">
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox3" />
+                      <label for="idCardCheckbox3" class="desc white"
+                        >ID card
+                      </label>
+                    </div>
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox4" />
+                      <label for="idCardCheckbox4" class="desc white"
+                        >Passport</label
+                      >
+                    </div>
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox5" />
+                      <label for="idCardCheckbox5" class="desc white"
+                        >Residence permit</label
+                      >
+                    </div>
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox6" />
+                      <label for="idCardCheckbox6" class="desc white"
+                        >Driver`slicense</label
+                      >
+                    </div>
+                  </div>
+                  <p class="desc white">The document should be:</p>
+                  <p class="desc white">- bright and clear,</p>
+                  <p class="desc white">
+                    - all corners of the document should be visible.
+                  </p>
+                  <div class="upload">
+                    <input type="file" id="fileInput" name="fileInput" />
+                    <label for="fileInput">
+                      <img
+                        class="upload-img"
+                        src="./assets/images/verification/upload.svg"
+                        alt="Загрузить файл"
+                      />
+                    </label>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-continue"
+                    onclick="hidePopup('sixthPopup'); showNextPopup('seventhPopup')"
+                  >
+                    Next
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div id="seventhPopup" class="popup prompt-container-verification">
+              <form>
+                <div class="prompt-content">
+                  <img
+                    src="./assets/images/battleroom-open/plus.svg"
+                    class="prompt-icon prompt-icon-plus-ver"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/images/verification/verification.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="prompt-title" style="padding: 0">Step 2</p>
+                  <p class="desc white" style="padding: 0; text-align: center">
+                    Email verification
+                  </p>
+                  <img
+                    src="./assets/images/verification/step-2.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="desc white">Enter your email</p>
+                  <input
+                    type="email"
+                    name=""
+                    class="input-email"
+                    placeholder="Email*"
+                    id=""
+                  />
+                  <div class="verification-code-block">
+                    <input
+                      type="text"
+                      placeholder="_ _ _ _"
+                      class="enter-code"
+                      maxlength="4"
+                      pattern="[0-9]{4}"
+                    />
+                    <button type="submit" class="send-code">Send code</button>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-continue"
+                    onclick="hidePopup('seventhPopup'); showNextPopup('eighthPopup')"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div id="eighthPopup" class="popup prompt-container-verification">
+              <div class="prompt-content">
+                <div class="confetti">
+                  <div class="successfully-verified">
+                    <img
+                      src="./assets/images/verification/verification.svg"
+                      class="prompt-icon"
+                      style="margin: 0 auto"
+                      alt=""
+                    />
+                    <p class="prompt-title" style="padding: 0">
+                      Successfully verified
+                    </p>
+                    <p
+                      class="desc white"
+                      style="padding: 0; text-align: center"
+                    >
+                      You are now verified!
+                    </p>
+                    <a
+                      href="./battleroom-live.html"
+                      class="btn-continue"
+                      onclick="hidePopup('eighthPopup')"
+                    >
+                      Ok
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="" class="account-action-btn" style="color: #fff">
+              Main Balance <br />
+              <span style="font-family: Sawarabi Mincho; color: #f7d261">
+                $1,000</span
+              ></a
+            >
+            <a href="" class="account-action-btn"
+              ><img src="./assets/images/icons/deposit.svg" alt="" />Deposit</a
+            >
+            <a href="./withdrawal.html" class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/withdrawal.svg"
+                alt=""
+              />Withdrawal</a
+            >
+            <a href="./transactions.html" class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/transaction.svg"
+                alt=""
+              />Tranactions</a
+            >
+            <a
+              href="./personal-settings-verified.html"
+              class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/settings.svg"
+                alt=""
+              />Personal Settings</a
+            >
+            <a href="./mybattles.html" class="account-action-btn"
+              ><img src="./assets/images/battleroom-open/battle.svg" alt="" />
+              My Battles</a
+            >
+            <a href="./leaderboard.html" class="account-action-btn"
+              ><img src="./assets/images/battleroom-open/crown.svg" alt="" />
+              Leaderboard</a
+            >
+            <a href="./support.html" class="account-action-btn"
+              ><img src="./assets/images/battleroom-open/support.svg" alt="" />
+              Support</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <main class="battleroom-background forms deposit">
+        <div class="battleroom">
+          <div class="nav">
+            <img
+              src="./assets/images/login/logo_2.svg"
+              class="battleroom-logo"
+              alt=""
+            />
+            <a href="./battleroom-live.html">
+              <img
+                src="./assets/images/battleroom-open/battle-room-2.svg"
+                alt=""
+              />
+            </a>
+            <a href="./viproom-open.html">
+              <img src="./assets/images/battleroom-open/vip-room.svg" alt="" />
+            </a>
+            <a href="./pokerroom-open.html">
+              <img
+                src="./assets/images/battleroom-open/poker-room.svg"
+                alt=""
+              />
+            </a>
+            <a href="./stockvsstock-open.html">
+              <img src="./assets/images/battleroom-open/stock.svg" alt="" />
+            </a>
+
+            <a href="./battleroom-live.html" class="nav-btn"
+              ><img
+                src="./assets/images/battleroom-open/sword.svg"
+                alt=""
+              />BATTLE ROOM</a
+            >
+            <a href="./viproom-open.html" class="nav-btn"
+              ><img
+                src="./assets/images/battleroom-open/crown-icon.svg"
+                alt=""
+              />VIP ROOM</a
+            >
+            <a href="./pokerroom-open.html" class="nav-btn"
+              ><img
+                src="./assets/images/battleroom-open/poker.svg"
+                alt=""
+              />POKER ROOM</a
+            >
+            <a href="./stockvsstock-open.html" class="nav-btn"
+              ><img
+                src="./assets/images/battleroom-open/candles.svg"
+                alt=""
+              />STOCK VS STOCK</a
+            >
+          </div>
+
+          <div class="battleroom-filter-menu">
+            <div class="battleroom-filter">
+              <button class="filter-button active">Deposit</button>
+            </div>
+
+            <div class="first-part">
+              <div class="battleroom-filter-adaptive">
+                <button class="filter-button active">Deposit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="board-section">
+          <div class="balance">
+            <p class="balance-text">Main Balance</p>
+            <p class="balance-text" style="color: #f8d05f">1,000 USDT</p>
+          </div>
+
+          <div class="refill-balance">
+            <div class="payment-method">
+              <p class="refill-balance-title">Payment method</p>
+              <select id="wallets" onchange="toggleElements()">
+                <option value="usdt">USDT wallet</option>
+                <option value="paypal">PayPal</option>
+              </select>
+            </div>
+            <div class="amount">
+              <p class="refill-balance-title">Amount</p>
+              <div class="amount-input">
+                <input type="text" class="input" value="0" />
+                <button class="currency">USDT</button>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="submit">Submit</a>
+
+          <p class="address" id="walletAddress">
+            <span style="color: #fff">Wallet address :</span>
+            3JrD7PqKSuoa7Cr4iWwgD3WXbhRkmAcXHB
+            <img src="./assets/images/copy.svg" alt="" id="copyButton" />
+          </p>
+        </section>
+        <footer class="login-footer">
+          <p class="footer-title">Regulations & Partners</p>
+          <img
+            src="./assets/images/login/partners.svg"
+            style="inline-size: fit-content"
+            alt=""
+          />
+          <p class="footer-copyright">
+            © 2024 StockBattle. All rights reserved.
+          </p>
+        </footer>
+      </main>
+    </div>
+  </body>
+  <script src="./assets/script.js"></script>
+</html>
